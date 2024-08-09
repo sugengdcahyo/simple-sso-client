@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+</head>
+<body>
+    <h1>Welcome to My Flask App</h1>
+    {% if oidc.user_loggedin %}
+      <p> Profile: {{ oidc.user_getinfo(['preferred_username', 'email', 'sub']) }} </p>
+    {% else %}
+      <p>This is the home page.</p>
+    {% endif %}
+    <a href="/home">home</a>
+    <a href="/protected">protected</a>
+    <a href="/login">login</a>
+    <a href="/signout">logout</a>
+</body>
+</html>
